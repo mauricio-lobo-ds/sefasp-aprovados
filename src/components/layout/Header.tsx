@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <Medal className="w-8 h-8 text-blue-500" />
-              <span className="text-xl font-bold text-slate-900">
+              <span className="text-base sm:text-xl font-bold text-slate-900">
                 Aprovados - SEFAZ-SP
               </span>
             </Link>

@@ -38,7 +38,7 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
 
   return (
     <div className="space-y-6 pb-8">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-semibold text-slate-900">
           Perfil dos Aprovados
         </h2>

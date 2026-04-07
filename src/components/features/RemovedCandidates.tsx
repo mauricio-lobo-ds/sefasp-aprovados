@@ -42,14 +42,14 @@ export const RemovedCandidates: React.FC<RemovedCandidatesProps> = ({
           {removedCandidates.map((candidate) => (
             <div
               key={candidate.inscricao}
-              className="flex items-center justify-between p-3 bg-white rounded-lg border border-red-200"
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 bg-white rounded-lg border border-red-200"
             >
-              <div className="flex-1">
-                <div className="flex items-center space-x-3">
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
                   <Badge variant="error">{candidate.inscricao}</Badge>
-                  <span className="font-medium text-slate-900">{candidate.nome}</span>
+                  <span className="font-medium text-slate-900 text-sm break-words">{candidate.nome}</span>
                 </div>
-                <div className="flex items-center space-x-2 mt-1">
+                <div className="flex items-center gap-2 mt-1">
                   <Badge variant="info" className="text-xs">AC: {candidate.ac}º</Badge>
                   {candidate.pcd && (
                     <Badge variant="warning" className="text-xs">PCD: {candidate.pcd}º</Badge>
@@ -61,6 +61,7 @@ export const RemovedCandidates: React.FC<RemovedCandidatesProps> = ({
                 size="sm"
                 icon={RotateCcw}
                 onClick={() => handleRestoreCandidate(candidate.inscricao)}
+                className="w-full sm:w-auto flex-shrink-0"
               >
                 Restaurar
               </Button>

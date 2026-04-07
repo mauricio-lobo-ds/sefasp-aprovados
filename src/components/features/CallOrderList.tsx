@@ -156,16 +156,16 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
       {/* Call Order Table */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
-            <h3 className="text-lg font-medium text-slate-900">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <h3 className="text-base font-medium text-slate-900">
               Posições de Chamada
             </h3>
             {isImmediatePage ? (
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 self-start sm:self-auto">
                 Vagas Imediatas (1º–{immediateCount}º)
               </span>
             ) : (
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800 self-start sm:self-auto">
                 Cadastro de Reserva — CR ({immediateCount + 1}º–{totalCalled}º)
               </span>
             )}
@@ -176,20 +176,20 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
             <table className="min-w-full divide-y divide-slate-200 table-fixed align-middle">
               <thead className="bg-slate-50">
                 <tr className="align-middle">
-                  <th className="w-20 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
-                    Posição
+                  <th className="w-14 sm:w-20 px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                    Pos.
                   </th>
-                  <th className="w-20 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                  <th className="w-16 sm:w-20 px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Tipo
                   </th>
-                  <th className="w-32 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                  <th className="w-24 sm:w-32 px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Inscrição
                   </th>
-                  <th className="px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                  <th className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Nome
                   </th>
-                  <th className="w-28 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider export-hide-pdf">
-                    Não Assume
+                  <th className="w-10 sm:w-28 px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider export-hide-pdf">
+                    <span className="hidden sm:inline">Não Assume</span>
                   </th>
                 </tr>
               </thead>
@@ -246,7 +246,7 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
       <Card>
         <CardContent>
           <h4 className="font-medium text-slate-900 mb-3">Legenda:</h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-blue-100 border border-blue-300 rounded flex-shrink-0"></div>
               <span className="text-slate-600">AC — Ampla Concorrência</span>

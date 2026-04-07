@@ -59,12 +59,12 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
 
   return (
     <tr className={`group ${isImmediate ? immediateRowBg : (isEven ? 'bg-white' : 'bg-slate-50')} hover:bg-blue-50 transition-colors`}>
-      <td className="w-20 px-3 py-1.5 whitespace-nowrap align-middle">
+      <td className="w-14 sm:w-20 px-2 sm:px-3 py-1.5 whitespace-nowrap align-middle">
         <span className="text-sm font-bold text-slate-900 mr-2">
           {position.position}º
         </span>
       </td>
-      <td className="w-20 px-3 py-1.5 whitespace-nowrap align-middle">
+      <td className="w-16 sm:w-20 px-2 sm:px-3 py-1.5 whitespace-nowrap align-middle">
         {isEditing ? (
           <div className="flex items-center space-x-2">
             <Select
@@ -108,12 +108,12 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
           </div>
         )}
       </td>
-      <td className="w-32 px-3 py-1.5 whitespace-nowrap text-xs font-medium text-slate-900 align-middle">
+      <td className="w-24 sm:w-32 px-2 sm:px-3 py-1.5 whitespace-nowrap text-xs font-medium text-slate-900 align-middle">
         {position.candidate?.inscricao || (
           <span className="text-slate-400 italic">Vago</span>
         )}
       </td>
-      <td className="px-3 py-1.5 whitespace-nowrap text-xs text-slate-900 align-middle">
+      <td className="px-2 sm:px-3 py-1.5 text-xs text-slate-900 align-middle whitespace-nowrap">
         {position.candidate?.nome || (
           <div className="flex items-center text-slate-400 italic">
             <AlertTriangle className="w-4 h-4 mr-1" />
@@ -121,7 +121,7 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
           </div>
         )}
       </td>
-      <td className="w-28 px-3 py-1.5 whitespace-nowrap text-xs text-slate-900 align-middle export-hide-pdf">
+      <td className="w-10 sm:w-28 px-2 sm:px-3 py-1.5 whitespace-nowrap text-xs text-slate-900 align-middle export-hide-pdf">
         <div className="flex items-center">
           {position.candidate && (
             <button

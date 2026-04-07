@@ -105,7 +105,7 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
   return (
     <div className="space-y-6">
       {/* Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         <Input
           placeholder="Buscar por nome ou inscrição..."
           icon={Search}
@@ -146,12 +146,13 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
             ]}
           />
         )}
-        <div className="flex space-x-2">
+        <div className="sm:col-span-2 lg:col-span-1">
           <Button
             variant="secondary"
             icon={FileSpreadsheet}
             onClick={handleExportExcel}
             loading={exportLoading}
+            className="w-full sm:w-auto"
           >
             Excel
           </Button>
@@ -159,17 +160,15 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
       </div>
 
       {/* Results Summary */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <Badge variant="info">
-            {filteredCandidates.length} candidatos encontrados
+      <div className="flex flex-wrap items-center gap-2">
+        <Badge variant="info">
+          {filteredCandidates.length} candidatos encontrados
+        </Badge>
+        {filters.quota !== 'all' && (
+          <Badge variant="default">
+            Filtro: {filters.quota}
           </Badge>
-          {filters.quota !== 'all' && (
-            <Badge variant="default">
-              Filtro: {filters.quota}
-            </Badge>
-          )}
-        </div>
+        )}
       </div>
 
       {/* Table */}
@@ -178,16 +177,16 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
           <table className="min-w-full divide-y divide-slate-200 table-fixed align-middle">
             <thead className="bg-slate-50">
               <tr className="align-middle">
-                <th className="w-32 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                <th className="w-24 sm:w-32 px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   Inscrição
                 </th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                <th className="px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   Nome
                 </th>
-                <th className="w-16 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                <th className="w-14 sm:w-16 px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   AC
                 </th>
-                <th className="w-16 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                <th className="w-14 sm:w-16 px-2 sm:px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   PCD
                 </th>
               </tr>
@@ -207,27 +206,27 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-between">
-          <div className="text-sm text-slate-600">
-            Mostrando {((currentPage - 1) * itemsPerPage) + 1} a {Math.min(currentPage * itemsPerPage, filteredCandidates.length)} de {filteredCandidates.length} candidatos
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div className="text-xs text-slate-500 text-center sm:text-left">
+            {((currentPage - 1) * itemsPerPage) + 1}–{Math.min(currentPage * itemsPerPage, filteredCandidates.length)} de {filteredCandidates.length} candidatos
           </div>
-          <div className="flex space-x-2">
+          <div className="flex items-center justify-center gap-2">
             <Button
               variant="ghost"
               disabled={currentPage === 1}
               onClick={() => setCurrentPage(prev => prev - 1)}
             >
-              Anterior
+              ← Anterior
             </Button>
-            <span className="flex items-center px-4 py-2 text-sm text-slate-600">
-              Página {currentPage} de {totalPages}
+            <span className="px-3 py-1.5 text-sm text-slate-600 bg-slate-100 rounded-md whitespace-nowrap">
+              {currentPage} / {totalPages}
             </span>
             <Button
               variant="ghost"
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage(prev => prev + 1)}
             >
-              Próxima
+              Próxima →
             </Button>
           </div>
         </div>

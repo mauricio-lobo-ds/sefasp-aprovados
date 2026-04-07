@@ -53,7 +53,7 @@ export const SpecialtyPage: React.FC = () => {
                 <IconComponent className={`w-6 h-6 ${config.color}`} />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-slate-900">
+                <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">
                   {config.name}
                 </h1>
                 <p className="text-slate-600">

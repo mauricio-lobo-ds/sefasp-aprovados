@@ -31,10 +31,10 @@ export const HomePage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Hero Section */}
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl md:text-3xl font-bold text-slate-900 mb-6">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4">
             Auditor Fiscal da Receita Estadual
           </h1>
-          <p className="text-xl text-slate-600 mb-4">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-3">
             <a
               href="https://www.concursosfcc.com.br/concursos/fazsp125/"
               target="_blank"
@@ -44,14 +44,14 @@ export const HomePage: React.FC = () => {
               Concurso SEFAZ-SP (FCC)
             </a>
           </p>
-          <p className="text-lg text-slate-500">
+          <p className="text-sm sm:text-base text-slate-500">
             São Paulo - SP
           </p>
           <div className="mt-8 w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Specialty Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 max-w-2xl mx-auto">
           {specialties.map((specialty) => {
             const IconComponent = specialty.icon;
             return (
@@ -62,10 +62,10 @@ export const HomePage: React.FC = () => {
                 className="group"
               >
                 <CardHeader className="text-center">
-                  <div className={`w-16 h-16 ${specialty.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200`}>
-                    <IconComponent className="w-8 h-8 text-white" />
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 ${specialty.color} rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-200`}>
+                    <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-2">
                     {specialty.title}
                   </h3>
                 </CardHeader>
@@ -89,12 +89,12 @@ export const HomePage: React.FC = () => {
 
         {/* Phase Banner */}
         <div className="max-w-2xl mx-auto mb-8">
-          <div className="flex items-center justify-center gap-3 bg-gray-600 text-white rounded-xl px-6 py-4 shadow-md">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-200 whitespace-nowrap">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-gray-600 text-white rounded-xl px-4 sm:px-6 py-3 sm:py-4 shadow-md">
+            <span className="text-xs font-semibold uppercase tracking-wide text-blue-200">
               Fase atual
             </span>
-            <div className="w-px h-5 bg-blue-400 flex-shrink-0" />
-            <span className="text-base sm:text-lg font-medium text-center leading-snug">
+            <div className="w-px h-4 bg-blue-400 flex-shrink-0 hidden sm:block" />
+            <span className="text-sm sm:text-base font-medium text-center leading-snug">
               Resultado Preliminar das Provas Objetivas
             </span>
           </div>
@@ -102,7 +102,7 @@ export const HomePage: React.FC = () => {
 
         {/* About Section */}
         <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-          <p className="text-slate-700 text-base sm:text-sm leading-relaxed mb-4">
+          <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
             A classificação é apresentada conforme as listas de Ampla Concorrência (AC) e Pessoa com Deficiência (PCD),
             respeitando a ordem de mérito estabelecida no edital. A ordem de chamada segue as normas legais de alternância
             e proporcionalidade entre as cotas: as vagas reservadas à cota PCD ocupam as posições{' '}
@@ -114,7 +114,7 @@ export const HomePage: React.FC = () => {
             serão convocados a ocupar a 5ª, 30ª, 50ª, 70ª vagas do concurso público, e assim sucessivamente,
             a cada intervalo de 20 cargos providos."</em>
           </p>
-          <p className="text-slate-700 text-base sm:text-sm leading-relaxed mb-6">
+          <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
             Ao todo, serão convocados até <strong>300 candidatos de GT</strong> e <strong>100 de TI</strong>,
             sendo as primeiras <strong>150 vagas de GT</strong> e as primeiras <strong>50 de TI</strong>
             {' '}correspondentes às vagas imediatas previstas no edital. O restante compõe o{' '}
