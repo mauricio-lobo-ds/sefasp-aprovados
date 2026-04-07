@@ -9,14 +9,16 @@ interface CallOrderPositionProps {
   position: CallPosition;
   index: number;
   specialty: Specialty;
+  isImmediate: boolean;
   onRemove: (candidateId: string) => Promise<void>;
-  onUpdateType: (position: number, newType: 'AC' | 'PCD' | 'NI') => Promise<void>;
+  onUpdateType: (position: number, newType: 'AC' | 'PCD') => Promise<void>;
 }
 
 export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
   position,
   index,
   specialty,
+  isImmediate,
   onRemove,
   onUpdateType
 }) => {
@@ -24,10 +26,11 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
   const [editingType, setEditingType] = useState(position.type);
 
   const isEven = index % 2 === 0;
+  const immediateRowBg = isEven ? 'bg-green-50' : 'bg-green-100/60';
 
   const handleRemoveCandidate = async () => {
     if (!position.candidate) return;
-    
+
     if (window.confirm(`Tem certeza que deseja marcar ${position.candidate.nome} como "não assume"?`)) {
       await onRemove(position.candidate.inscricao);
     }
@@ -42,7 +45,6 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
     switch (type) {
       case 'AC': return 'info';
       case 'PCD': return 'warning';
-      case 'NI': return 'success';
       default: return 'default';
     }
   };
@@ -51,30 +53,26 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
     switch (type) {
       case 'AC': return 'bg-blue-50';
       case 'PCD': return 'bg-yellow-50';
-      case 'NI': return 'bg-green-50';
       default: return 'bg-slate-50';
     }
   };
 
   return (
-    <tr className={`group ${isEven ? 'bg-white' : 'bg-slate-50'} hover:bg-blue-50 transition-colors`}>
+    <tr className={`group ${isImmediate ? immediateRowBg : (isEven ? 'bg-white' : 'bg-slate-50')} hover:bg-blue-50 transition-colors`}>
       <td className="w-20 px-3 py-2 whitespace-nowrap align-middle">
-        <div className="flex items-center">
-          <span className="text-lg font-bold text-slate-900 mr-2">
-            {position.position}º
-          </span>
-        </div>
+        <span className="text-lg font-bold text-slate-900 mr-2">
+          {position.position}º
+        </span>
       </td>
       <td className="w-20 px-3 py-2 whitespace-nowrap align-middle">
         {isEditing ? (
           <div className="flex items-center space-x-2">
             <Select
               value={editingType}
-              onChange={(e) => setEditingType(e.target.value as 'AC' | 'PCD' | 'NI')}
+              onChange={(e) => setEditingType(e.target.value as 'AC' | 'PCD')}
               options={[
                 { value: 'AC', label: 'AC' },
-                { value: 'PCD', label: 'PCD' },
-                { value: 'NI', label: 'NI' }
+                { value: 'PCD', label: 'PCD' }
               ]}
               className="w-24 text-xs"
             />
@@ -110,7 +108,7 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
           </div>
         )}
       </td>
-      <td className="w-28 px-3 py-2 whitespace-nowrap text-sm font-medium text-slate-900 align-middle">
+      <td className="w-32 px-3 py-2 whitespace-nowrap text-sm font-medium text-slate-900 align-middle">
         {position.candidate?.inscricao || (
           <span className="text-slate-400 italic">Vago</span>
         )}
@@ -121,11 +119,6 @@ export const CallOrderPosition: React.FC<CallOrderPositionProps> = ({
             <AlertTriangle className="w-4 h-4 mr-1" />
             Nenhum candidato disponível
           </div>
-        )}
-      </td>
-      <td className="w-16 px-3 py-2 whitespace-nowrap text-sm font-semibold text-slate-900 align-middle">
-        {position.candidate?.nota || (
-          <span className="text-slate-400">-</span>
         )}
       </td>
       <td className="w-28 px-3 py-2 whitespace-nowrap text-sm text-slate-900 align-middle export-hide-pdf">

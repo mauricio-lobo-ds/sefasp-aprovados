@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, GraduationCap, Briefcase, Award, UserCheck } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, UserCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { Specialty } from '../../types';
@@ -18,8 +18,7 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
 
   const calledCandidates = callOrderState.positions
     .filter(pos => pos.candidate !== null)
-    .map(pos => pos.candidate!)
-    .slice(0, 20);
+    .map(pos => pos.candidate!);
 
   if (candidatesLoading || callOrderState.loading || profilesLoading) {
     return (
@@ -52,24 +51,7 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
         {calledCandidates.map((candidate, index) => {
           const profile = getProfile(candidate.nome);
           const experienciaDetails = profile ? getExperienciaDetails(profile.experiencia_profissional) : null;
-          
-          // Calcular idade
-          const calculateAge = (birthDate: string): number => {
-            const [day, month, year] = birthDate.split('/').map(Number);
-            const birth = new Date(year, month - 1, day);
-            const today = new Date();
-            let age = today.getFullYear() - birth.getFullYear();
-            const monthDiff = today.getMonth() - birth.getMonth();
-            
-            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-              age--;
-            }
-            
-            return age;
-          };
-          
-          const age = calculateAge(candidate.nascimento);
-          
+
           return (
             <Card key={candidate.inscricao} className="hover:shadow-md transition-shadow overflow-hidden">
               <CardHeader className="pb-3">
@@ -87,16 +69,8 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
                   </Badge>
                 </div>
               </CardHeader>
-              
-              <CardContent className="space-y-3">
-                {/* Data de Nascimento */}
-                <div className="flex items-center space-x-2 min-w-0">
-                  <Calendar className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  <span className="text-sm text-slate-600 break-words">
-                    {candidate.nascimento} ({age} anos)
-                  </span>
-                </div>
 
+              <CardContent className="space-y-3">
                 {/* Formação */}
                 <div className="flex items-start space-x-2 min-w-0">
                   <GraduationCap className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
@@ -110,7 +84,7 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
                           <p key={i} className="mb-1 last:mb-0 break-words">{linha}</p>
                         ))
                       ) : (
-                        <p className="break-words">{candidate.formacao || 'Não informado'}</p>
+                        <p className="break-words text-slate-400 italic">Não informado</p>
                       )}
                     </div>
                   </div>
@@ -124,11 +98,10 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
                       Experiência
                     </p>
                     <p className="text-sm text-slate-700 break-words">
-                      {profile ? formatExperiencia(profile.experiencia_profissional) : (candidate.experiencia || 'Não informado')}
+                      {profile ? formatExperiencia(profile.experiencia_profissional) : <span className="text-slate-400 italic">Não informado</span>}
                     </p>
-                    
-                    {/* Atividades */}
-                    {experienciaDetails?.activities.length > 0 && (
+
+                    {experienciaDetails?.activities && experienciaDetails.activities.length > 0 && (
                       <div className="mt-2">
                         <p className="text-xs text-slate-500 mb-1">Principais atividades:</p>
                         <div className="space-y-0.5">
@@ -141,8 +114,7 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
                       </div>
                     )}
 
-                    {/* Expertise dentro da experiência */}
-                    {experienciaDetails?.expertise.length > 0 && (
+                    {experienciaDetails?.expertise && experienciaDetails.expertise.length > 0 && (
                       <div className="mt-2">
                         <p className="text-xs text-slate-500 mb-1">Expertise profissional:</p>
                         <div className="space-y-0.5">
@@ -155,27 +127,12 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
                       </div>
                     )}
 
-                    {/* Sistemas */}
-                    {experienciaDetails?.systems.length > 0 && (
+                    {experienciaDetails?.systems && experienciaDetails.systems.length > 0 && (
                       <div className="mt-2">
                         <p className="text-xs text-slate-500 mb-1">Sistemas/Tecnologias:</p>
                         <p className="text-xs text-slate-600 break-words">
                           {experienciaDetails.systems.join(', ')}
                         </p>
-                      </div>
-                    )}
-
-                    {/* Expertise geral (dentro da experiência) */}
-                    {profile?.expertise && profile.expertise.length > 0 && (
-                      <div className="mt-2">
-                        <p className="text-xs text-slate-500 mb-1">Expertise geral:</p>
-                        <div className="space-y-0.5">
-                          {profile.expertise.map((exp, i) => (
-                            <p key={i} className="text-xs text-slate-600 break-words">
-                              • {exp}
-                            </p>
-                          ))}
-                        </div>
                       </div>
                     )}
                   </div>
@@ -194,7 +151,7 @@ export const CandidateProfiles: React.FC<CandidateProfilesProps> = ({ specialty 
                           <p key={i} className="mb-1 last:mb-0 break-words">{linha}</p>
                         ))
                       ) : (
-                        <p className="break-words">{candidate.aprovacoes || 'Não informado'}</p>
+                        <p className="break-words text-slate-400 italic">Não informado</p>
                       )}
                     </div>
                   </div>

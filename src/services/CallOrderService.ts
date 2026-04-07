@@ -1,5 +1,5 @@
 import { CallOrderRepository } from '../domain/repositories/CallOrderRepository';
-import { CallOrderUseCase } from '../domain/usecases/CallOrderUseCase';
+import { CallOrderUseCase, generateSequence } from '../domain/usecases/CallOrderUseCase';
 import { CallOrderState, Candidate, Specialty } from '../types';
 
 export class CallOrderService {
@@ -16,15 +16,13 @@ export class CallOrderService {
     specialty: Specialty,
     candidates: Candidate[]
   ): Promise<CallOrderState> {
-    // Try to load existing state
     const existingState = await this.callOrderRepository.load(specialty);
-    
+
     if (existingState) {
       return existingState;
     }
 
-    // Create initial state
-    const sequence = this.getSequenceForSpecialty(specialty);
+    const sequence = generateSequence(candidates.length);
     const positions = this.callOrderUseCase.calculateCallOrder(
       candidates,
       specialty,
@@ -80,7 +78,7 @@ export class CallOrderService {
   async updatePositionType(
     specialty: Specialty,
     position: number,
-    newType: 'AC' | 'PCD' | 'NI',
+    newType: 'AC' | 'PCD',
     currentState: CallOrderState,
     candidates: Candidate[]
   ): Promise<CallOrderState> {
@@ -102,24 +100,5 @@ export class CallOrderService {
   ): Promise<CallOrderState> {
     await this.callOrderRepository.clear(specialty);
     return this.initializeCallOrder(specialty, candidates);
-  }
-
-  private getSequenceForSpecialty(specialty: Specialty): string[] {
-    const sequences: Record<Specialty, string[]> = {
-      'GESTÃO TRIBUTÁRIA': [
-        'AC', 'AC', 'NI', 'AC', 'AC', 'PCD', 'AC', 'NI', 'AC', 'AC',
-        'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC'
-      ],
-      'DIREITO/PROCESSO TRIBUTÁRIO': [
-        'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC',
-        'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC'
-      ],
-      'TECNOLOGIA DA INFORMAÇÃO': [
-        'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC',
-        'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC'
-      ]
-    };
-
-    return sequences[specialty];
   }
 }

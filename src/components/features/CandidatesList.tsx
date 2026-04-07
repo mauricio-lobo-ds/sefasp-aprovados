@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, FileSpreadsheet } from 'lucide-react';
+import { Search, FileSpreadsheet } from 'lucide-react';
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
 import { Button } from '../ui/Button';
@@ -17,7 +17,7 @@ interface CandidatesListProps {
 export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => {
   const { candidates, loading, error } = useCandidates(specialty);
   const { exportToExcel, loading: exportLoading } = useExport();
-  
+
   const [filters, setFilters] = useState<FilterState>({
     name: '',
     classification: '',
@@ -25,7 +25,7 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
     sortBy: 'none',
     sortOrder: 'asc'
   });
-  
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
 
@@ -33,23 +33,21 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
     let filtered = candidates.filter(candidate => {
       const matchesName = candidate.nome.toLowerCase().includes(filters.name.toLowerCase()) ||
                          candidate.inscricao.includes(filters.name);
-      
+
       const matchesClassification = filters.classification === '' ||
                                   candidate.ac.toString().includes(filters.classification);
-      
+
       const matchesQuota = filters.quota === 'all' ||
                           (filters.quota === 'AC') ||
-                          (filters.quota === 'PCD' && candidate.pcd !== null) ||
-                          (filters.quota === 'NI' && candidate.ni !== null);
+                          (filters.quota === 'PCD' && candidate.pcd !== null);
 
       return matchesName && matchesClassification && matchesQuota;
     });
 
-    // Apply sorting
     if (filters.sortBy !== 'none') {
       filtered = [...filtered].sort((a, b) => {
         let comparison = 0;
-        
+
         switch (filters.sortBy) {
           case 'ac':
             comparison = a.ac - b.ac;
@@ -59,21 +57,13 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
             const bPcd = b.pcd || 999999;
             comparison = aPcd - bPcd;
             break;
-          case 'ni':
-            const aNi = a.ni || 999999;
-            const bNi = b.ni || 999999;
-            comparison = aNi - bNi;
-            break;
-          case 'nota':
-            comparison = b.nota - a.nota; // Higher scores first
-            break;
           case 'nome':
             comparison = a.nome.localeCompare(b.nome);
             break;
           default:
             comparison = 0;
         }
-        
+
         return filters.sortOrder === 'desc' ? -comparison : comparison;
       });
     }
@@ -91,7 +81,6 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
   const handleExportExcel = async () => {
     await exportToExcel(specialty, filteredCandidates);
   };
-
 
   if (loading) {
     return (
@@ -134,8 +123,7 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
           options={[
             { value: 'all', label: 'Todas as cotas' },
             { value: 'AC', label: 'Ampla Concorrência' },
-            { value: 'PCD', label: 'PCD' },
-            { value: 'NI', label: 'Negros e Indígenas' }
+            { value: 'PCD', label: 'PCD' }
           ]}
         />
         <Select
@@ -145,8 +133,6 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
             { value: 'none', label: 'Sem ordenação' },
             { value: 'ac', label: 'Classificação AC' },
             { value: 'pcd', label: 'Classificação PCD' },
-            { value: 'ni', label: 'Classificação NI' },
-            { value: 'nota', label: 'Nota' },
             { value: 'nome', label: 'Nome' }
           ]}
         />
@@ -192,26 +178,17 @@ export const CandidatesList: React.FC<CandidatesListProps> = ({ specialty }) => 
           <table className="min-w-full divide-y divide-slate-200 table-fixed align-middle">
             <thead className="bg-slate-50">
               <tr className="align-middle">
-                <th className="w-28 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                <th className="w-32 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   Inscrição
                 </th>
                 <th className="px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   Nome
-                </th>
-                <th className="w-28 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
-                  Nascimento
-                </th>
-                <th className="w-16 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
-                  Nota
                 </th>
                 <th className="w-16 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   AC
                 </th>
                 <th className="w-16 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                   PCD
-                </th>
-                <th className="w-16 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
-                  NI
                 </th>
               </tr>
             </thead>

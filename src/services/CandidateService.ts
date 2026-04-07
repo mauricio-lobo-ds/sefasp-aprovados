@@ -27,12 +27,11 @@ export class CandidateService {
 
   async filterByQuota(
     candidates: Candidate[],
-    quota: 'all' | 'AC' | 'PCD' | 'NI'
+    quota: 'all' | 'AC' | 'PCD'
   ): Promise<Candidate[]> {
     if (quota === 'all') return candidates;
     if (quota === 'AC') return candidates;
     if (quota === 'PCD') return candidates.filter(c => c.pcd !== null);
-    if (quota === 'NI') return candidates.filter(c => c.ni !== null);
     return candidates;
   }
 
@@ -47,9 +46,6 @@ export class CandidateService {
       switch (sortBy) {
         case 'name':
           comparison = a.nome.localeCompare(b.nome);
-          break;
-        case 'score':
-          comparison = a.nota - b.nota;
           break;
         case 'classification':
           comparison = a.ac - b.ac;

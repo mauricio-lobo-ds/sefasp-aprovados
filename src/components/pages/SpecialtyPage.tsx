@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { FileText, Users, Monitor, List, Megaphone, ArrowLeft, UserCheck } from 'lucide-react';
+import { Users, Monitor, List, Megaphone, ArrowLeft, UserCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { CandidatesList } from '../features/CandidatesList';
@@ -9,17 +9,11 @@ import { CandidateProfiles } from '../features/CandidateProfiles';
 import { Specialty } from '../../types';
 
 const specialtyConfig = {
-  direito: {
-    name: 'DIREITO/PROCESSO TRIBUTÁRIO' as Specialty,
-    icon: FileText,
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50'
-  },
   gestao: {
     name: 'GESTÃO TRIBUTÁRIA' as Specialty,
     icon: Users,
-    color: 'text-green-600',
-    bgColor: 'bg-green-50'
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-50'
   },
   tecnologia: {
     name: 'TECNOLOGIA DA INFORMAÇÃO' as Specialty,
@@ -63,7 +57,7 @@ export const SpecialtyPage: React.FC = () => {
                   {config.name}
                 </h1>
                 <p className="text-slate-600">
-                  Concurso Auditor Fiscal Tributário - Cuiabá/MT
+                  Concurso Auditor Fiscal da Receita Estadual - SEFAZ-SP
                 </p>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Medal, Users, Monitor, FileText } from 'lucide-react';
+import { Home, Medal, Users, Monitor } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const location = useLocation();
@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
             <Link to="/" className="flex items-center space-x-2">
               <Medal className="w-8 h-8 text-blue-500" />
               <span className="text-xl font-bold text-slate-900">
-                Aprovados - Auditor - Cuiabá
+                Aprovados - SEFAZ-SP
               </span>
             </Link>
           </div>
@@ -27,8 +27,8 @@ export const Header: React.FC = () => {
             <Link
               to="/"
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/') 
-                  ? 'text-blue-600 bg-blue-50' 
+                isActive('/')
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
@@ -37,39 +37,27 @@ export const Header: React.FC = () => {
             </Link>
 
             <Link
-              to="/direito"
-              className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/direito') 
-                  ? 'text-blue-600 bg-blue-50' 
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-              }`}
-            >
-              <FileText className="w-4 h-4" />
-              <span>Direito</span>
-            </Link>
-
-            <Link
               to="/gestao"
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/gestao') 
-                  ? 'text-blue-600 bg-blue-50' 
+                isActive('/gestao')
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
               <Users className="w-4 h-4" />
-              <span>Gestão</span>
+              <span>GT</span>
             </Link>
 
             <Link
               to="/tecnologia"
               className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/tecnologia') 
-                  ? 'text-blue-600 bg-blue-50' 
+                isActive('/tecnologia')
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
               <Monitor className="w-4 h-4" />
-              <span>Tecnologia</span>
+              <span>TI</span>
             </Link>
           </nav>
 
@@ -103,16 +91,6 @@ export const Header: React.FC = () => {
               <span>Início</span>
             </Link>
             <Link
-              to="/direito"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === '/direito' ? 'text-blue-600 bg-blue-50' : 'text-slate-700 hover:bg-slate-50'
-              }`}
-            >
-              <FileText className="w-4 h-4" />
-              <span>Direito</span>
-            </Link>
-            <Link
               to="/gestao"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium ${
@@ -120,7 +98,7 @@ export const Header: React.FC = () => {
               }`}
             >
               <Users className="w-4 h-4" />
-              <span>Gestão</span>
+              <span>GT</span>
             </Link>
             <Link
               to="/tecnologia"
@@ -130,7 +108,7 @@ export const Header: React.FC = () => {
               }`}
             >
               <Monitor className="w-4 h-4" />
-              <span>Tecnologia</span>
+              <span>TI</span>
             </Link>
           </nav>
         </div>

@@ -28,7 +28,7 @@ export const useCallOrder = (specialty: Specialty, candidates: Candidate[]) => {
     try {
       setError(null);
       const existingState = await callOrderService.checkExistingOrder(specialty);
-      
+
       if (existingState) {
         setCallOrderState(existingState);
         setHasOrder(true);
@@ -86,7 +86,7 @@ export const useCallOrder = (specialty: Specialty, candidates: Candidate[]) => {
 
   const updatePositionType = useCallback(async (
     position: number,
-    newType: 'AC' | 'PCD' | 'NI'
+    newType: 'AC' | 'PCD'
   ) => {
     try {
       setCallOrderState(prev => ({ ...prev, loading: true }));

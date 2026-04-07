@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { RefreshCw, FileSpreadsheet, AlertCircle, Play } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { LoadingSpinner } from '../ui/LoadingSpinner';
@@ -28,15 +28,24 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
   } = useCallOrder(specialty, candidates);
   const { exportToExcel, loading: exportLoading } = useExport();
 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const { immediateCount, totalCalled } = specialty === 'GESTÃO TRIBUTÁRIA'
+    ? { immediateCount: 150, totalCalled: 300 }
+    : { immediateCount: 50, totalCalled: 100 };
+  const itemsPerPage = immediateCount;
+
   const handleReset = async () => {
     if (window.confirm('Tem certeza que deseja resetar a ordem de chamada? Esta ação não pode ser desfeita.')) {
       await resetCallOrder();
+      setCurrentPage(1);
     }
   };
 
   const handleGenerateFresh = async () => {
     if (hasOrder && window.confirm('Tem certeza que deseja gerar uma nova ordem de chamada? Esta ação irá limpar todos os dados salvos e recalcular a ordem.')) {
       await generateFreshOrder();
+      setCurrentPage(1);
     } else if (!hasOrder) {
       await generateFreshOrder();
     }
@@ -46,6 +55,18 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
     await exportToExcel(specialty, candidates, callOrderState.positions);
   };
 
+  const cappedPositions = useMemo(() =>
+    callOrderState.positions.slice(0, totalCalled),
+    [callOrderState.positions, totalCalled]
+  );
+
+  const paginatedPositions = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return cappedPositions.slice(startIndex, startIndex + itemsPerPage);
+  }, [cappedPositions, currentPage, itemsPerPage]);
+
+  const totalPages = Math.ceil(cappedPositions.length / itemsPerPage);
+  const isImmediatePage = currentPage === 1;
 
   if (candidatesLoading || callOrderState.loading) {
     return (
@@ -99,7 +120,8 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
         <div>
           <h2 className="text-xl font-semibold text-slate-900">Ordem de Chamada</h2>
           <p className="text-slate-600">
-            Primeiros 20 candidatos na ordem de chamada para {specialty}
+            {cappedPositions.length} candidatos convocados para {specialty === 'GESTÃO TRIBUTÁRIA' ? 'GT' : 'TI'}
+            {' '}({immediateCount} vagas imediatas + {totalCalled - immediateCount} CR)
           </p>
         </div>
         <div className="flex flex-wrap space-x-2 gap-2">
@@ -134,9 +156,20 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
       {/* Call Order Table */}
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-medium text-slate-900">
-            Posições de Chamada
-          </h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-medium text-slate-900">
+              Posições de Chamada
+            </h3>
+            {isImmediatePage ? (
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                Vagas Imediatas (1º–{immediateCount}º)
+              </span>
+            ) : (
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800">
+                Cadastro de Reserva — CR ({immediateCount + 1}º–{totalCalled}º)
+              </span>
+            )}
+          </div>
         </CardHeader>
         <CardContent>
           <div id="call-order-table" className="overflow-x-auto">
@@ -149,14 +182,11 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
                   <th className="w-20 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Tipo
                   </th>
-                  <th className="w-28 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                  <th className="w-32 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Inscrição
                   </th>
                   <th className="px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                     Nome
-                  </th>
-                  <th className="w-16 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
-                    Nota
                   </th>
                   <th className="w-28 px-3 py-2 text-left text-xs font-medium text-slate-500 uppercase tracking-wider export-hide-pdf">
                     Não Assume
@@ -164,12 +194,13 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-slate-200">
-                {callOrderState.positions.map((position, index) => (
+                {paginatedPositions.map((position, index) => (
                   <CallOrderPosition
                     key={position.position}
                     position={position}
                     index={index}
                     specialty={specialty}
+                    isImmediate={isImmediatePage}
                     onRemove={removeCandidate}
                     onUpdateType={(pos, type) => updatePositionType(pos, type)}
                   />
@@ -177,6 +208,35 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
               </tbody>
             </table>
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-200">
+              <div className="text-sm text-slate-600">
+                {isImmediatePage ? 'Vagas Imediatas' : 'Cadastro de Reserva (CR)'}
+                {' '}— posições {((currentPage - 1) * itemsPerPage) + 1}º a {Math.min(currentPage * itemsPerPage, cappedPositions.length)}º
+              </div>
+              <div className="flex space-x-2">
+                <Button
+                  variant="ghost"
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage(prev => prev - 1)}
+                >
+                  Anterior
+                </Button>
+                <span className="flex items-center px-4 py-2 text-sm text-slate-600">
+                  Página {currentPage} de {totalPages}
+                </span>
+                <Button
+                  variant="ghost"
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage(prev => prev + 1)}
+                >
+                  Próxima
+                </Button>
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -184,18 +244,14 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
       <Card>
         <CardContent>
           <h4 className="font-medium text-slate-900 mb-3">Legenda:</h4>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-blue-100 border border-blue-300 rounded"></div>
               <span className="text-slate-600">AC - Ampla Concorrência</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-yellow-100 border border-yellow-300 rounded"></div>
-              <span className="text-slate-600">PCD - Pessoa com Deficiência</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-green-100 border border-green-300 rounded"></div>
-              <span className="text-slate-600">NI - Negros e Indígenas</span>
+              <span className="text-slate-600">PCD - Pessoa com Deficiência (5ª, 30ª, 50ª, 70ª, 90ª...)</span>
             </div>
           </div>
         </CardContent>

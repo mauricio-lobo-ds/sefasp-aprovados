@@ -44,7 +44,7 @@ export const useCandidates = (specialty?: Specialty) => {
     }
   }, [specialty]);
 
-  const filterByQuota = useCallback(async (quota: 'all' | 'AC' | 'PCD' | 'NI') => {
+  const filterByQuota = useCallback(async (quota: 'all' | 'AC' | 'PCD') => {
     try {
       const allCandidates = specialty 
         ? await candidateService.getCandidatesBySpecialty(specialty)

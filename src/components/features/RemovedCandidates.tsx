@@ -48,15 +48,11 @@ export const RemovedCandidates: React.FC<RemovedCandidatesProps> = ({
                 <div className="flex items-center space-x-3">
                   <Badge variant="error">{candidate.inscricao}</Badge>
                   <span className="font-medium text-slate-900">{candidate.nome}</span>
-                  <span className="text-sm text-slate-600">Nota: {candidate.nota}</span>
                 </div>
                 <div className="flex items-center space-x-2 mt-1">
                   <Badge variant="info" className="text-xs">AC: {candidate.ac}º</Badge>
                   {candidate.pcd && (
                     <Badge variant="warning" className="text-xs">PCD: {candidate.pcd}º</Badge>
-                  )}
-                  {candidate.ni && (
-                    <Badge variant="success" className="text-xs">NI: {candidate.ni}º</Badge>
                   )}
                 </div>
               </div>

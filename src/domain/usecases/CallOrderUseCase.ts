@@ -1,63 +1,60 @@
 import { Candidate, CallPosition, CallOrderState, Specialty } from '../../types';
 import { CandidateEntity } from '../entities/Candidate';
 
-export class CallOrderUseCase {
-  private readonly sequences: Record<Specialty, string[]> = {
-    'GESTÃO TRIBUTÁRIA': [
-      'AC', 'AC', 'NI', 'AC', 'AC', 'PCD', 'AC', 'NI', 'AC', 'AC',
-      'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC'
-    ],
-    'DIREITO/PROCESSO TRIBUTÁRIO': [
-      'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC',
-      'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC'
-    ],
-    'TECNOLOGIA DA INFORMAÇÃO': [
-      'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC',
-      'AC', 'AC', 'NI', 'AC', 'PCD', 'AC', 'AC', 'NI', 'AC', 'AC'
-    ]
-  };
+/**
+ * Regras SEFAZ-SP: posições reservadas para PCD são a 5ª, a 30ª, a 50ª
+ * e a partir daí de 20 em 20 (70ª, 90ª, 110ª, ...).
+ */
+function isPCDPosition(pos: number): boolean {
+  if (pos === 5) return true;
+  if (pos === 30) return true;
+  if (pos >= 50 && (pos - 50) % 20 === 0) return true;
+  return false;
+}
 
+export function generateSequence(totalCount: number): string[] {
+  const sequence: string[] = [];
+  for (let pos = 1; pos <= totalCount; pos++) {
+    sequence.push(isPCDPosition(pos) ? 'PCD' : 'AC');
+  }
+  return sequence;
+}
+
+export class CallOrderUseCase {
   calculateCallOrder(
     candidates: Candidate[],
     specialty: Specialty,
     removedIds: string[] = [],
     sequence?: string[]
   ): CallPosition[] {
-    const sequenceToUse = (sequence && sequence.length ? sequence : this.sequences[specialty]);
     const availableCandidates = candidates
       .filter(c => !removedIds.includes(c.inscricao))
       .map(c => new CandidateEntity(c));
 
-    // Separate candidates by quota
+    const totalCount = availableCandidates.length;
+    const sequenceToUse = (sequence && sequence.length ? sequence : generateSequence(totalCount));
+
+    // Separate candidates by quota, sorted by their classification position
     const acCandidates = [...availableCandidates].sort((a, b) => a.acPosition - b.acPosition);
     const pcdCandidates = availableCandidates
       .filter(c => c.hasQuota('PCD'))
       .sort((a, b) => (a.pcdPosition || 0) - (b.pcdPosition || 0));
-    const niCandidates = availableCandidates
-      .filter(c => c.hasQuota('NI'))
-      .sort((a, b) => (a.niPosition || 0) - (b.niPosition || 0));
 
     const positions: CallPosition[] = [];
     const usedCandidates = new Set<string>();
 
     for (let i = 0; i < sequenceToUse.length; i++) {
-      const positionType = sequenceToUse[i] as 'AC' | 'PCD' | 'NI';
+      const positionType = sequenceToUse[i] as 'AC' | 'PCD';
       let selectedCandidate: CandidateEntity | null = null;
 
-      if (positionType === 'AC') {
-        selectedCandidate = this.getNextAvailableCandidate(acCandidates, usedCandidates);
-      } else if (positionType === 'PCD') {
+      if (positionType === 'PCD') {
         selectedCandidate = this.getNextAvailableCandidate(pcdCandidates, usedCandidates);
         // Fallback to AC if no PCD available
         if (!selectedCandidate) {
           selectedCandidate = this.getNextAvailableCandidate(acCandidates, usedCandidates);
         }
-      } else if (positionType === 'NI') {
-        selectedCandidate = this.getNextAvailableCandidate(niCandidates, usedCandidates);
-        // Fallback to AC if no NI available
-        if (!selectedCandidate) {
-          selectedCandidate = this.getNextAvailableCandidate(acCandidates, usedCandidates);
-        }
+      } else {
+        selectedCandidate = this.getNextAvailableCandidate(acCandidates, usedCandidates);
       }
 
       if (selectedCandidate) {
@@ -142,7 +139,7 @@ export class CallOrderUseCase {
   updatePositionType(
     currentState: CallOrderState,
     position: number,
-    newType: 'AC' | 'PCD' | 'NI',
+    newType: 'AC' | 'PCD',
     candidates: Candidate[],
     specialty: Specialty
   ): CallOrderState {

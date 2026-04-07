@@ -18,11 +18,8 @@ export class ExportService {
         const candidatesData = candidates.map(candidate => ({
           'Inscrição': candidate.inscricao,
           'Nome': candidate.nome,
-          'Data de Nascimento': candidate.nascimento,
-          'Nota': candidate.nota,
           'Classificação AC': candidate.ac,
           'Classificação PCD': candidate.pcd || '',
-          'Classificação NI': candidate.ni || '',
           'Status': candidate.removed ? 'Removido' : 'Ativo'
         }));
 
@@ -36,8 +33,7 @@ export class ExportService {
           'Posição': position.position,
           'Tipo': position.type,
           'Inscrição': position.candidate?.inscricao || '',
-          'Nome': position.candidate?.nome || '',
-          'Nota': position.candidate?.nota || ''
+          'Nome': position.candidate?.nome || ''
         }));
 
         const callOrderSheet = XLSX.utils.json_to_sheet(callOrderData);
@@ -90,8 +86,8 @@ export class ExportService {
       const contentWidth = pageWidth - margin * 2;
       const imgHeight = (canvas.height * contentWidth) / canvas.width;
 
-      const appTitle = 'Aprovados - Auditor Fiscal Tributário - Cuiabá';
-      const editalText = 'Concurso Edital nº 01/2024';
+      const appTitle = 'Aprovados - Auditor Fiscal da Receita Estadual - SEFAZ-SP';
+      const editalText = 'Concurso SEFAZ-SP (FCC)';
       const editalUrl = (import.meta as any).env?.VITE_EDITAL_URL as string | undefined;
       const specialtyLabel = `Especialidade: ${String(specialty)}`;
       const timestampText = `Gerado em ${format(new Date(), 'dd/MM/yyyy HH:mm')}`;
@@ -164,7 +160,7 @@ export class ExportService {
         pdf.setFont('helvetica', 'normal');
         pdf.setFontSize(10);
         options.removedCandidates.forEach((c, idx) => {
-          const line = `${idx + 1}. ${c.inscricao} - ${c.nome} | Nota: ${c.nota} | AC: ${c.ac}${c.pcd ? ` | PCD: ${c.pcd}` : ''}${c.ni ? ` | NI: ${c.ni}` : ''}`;
+          const line = `${idx + 1}. ${c.inscricao} - ${c.nome} | AC: ${c.ac}${c.pcd ? ` | PCD: ${c.pcd}` : ''}`;
           if (y > pageHeight - margin) {
             pdf.addPage();
             y = drawHeader();
@@ -204,7 +200,7 @@ export class ExportService {
       
       // Cabeçalho específico para perfis
       const appTitle = 'Perfil dos Candidatos';
-      const editalText = 'Concurso Auditor Fiscal Tributário - Cuiabá';
+      const editalText = 'Concurso Auditor Fiscal da Receita Estadual - SEFAZ-SP (FCC)';
       const specialtyLabel = `Especialidade: ${specialty}`;
       const candidateCountText = `Total de candidatos: ${calledCandidates.length}`;
       const timestampText = `Gerado em ${format(new Date(), 'dd/MM/yyyy HH:mm')}`;
@@ -250,28 +246,12 @@ export class ExportService {
       let currentY = drawProfileHeader();
       let candidateIndex = 0;
 
-      // Função para calcular idade
-      const calculateAge = (birthDate: string): number => {
-        const [day, month, year] = birthDate.split('/').map(Number);
-        const birth = new Date(year, month - 1, day);
-        const today = new Date();
-        let age = today.getFullYear() - birth.getFullYear();
-        const monthDiff = today.getMonth() - birth.getMonth();
-        
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-          age--;
-        }
-        
-        return age;
-      };
-
       // Função para processar cada candidato
       for (const candidate of calledCandidates) {
         candidateIndex++;
         const profile = profilesData.getProfile ? profilesData.getProfile(candidate.nome) : null;
-        const experienciaDetails = profile && profilesData.getExperienciaDetails ? 
+        const experienciaDetails = profile && profilesData.getExperienciaDetails ?
           profilesData.getExperienciaDetails(profile.experiencia_profissional) : null;
-        const age = calculateAge(candidate.nascimento);
 
         // Calcular altura dinâmica baseada no conteúdo
         let estimatedHeight = 60; // altura base
@@ -328,7 +308,7 @@ export class ExportService {
         pdf.setTextColor(0, 0, 0);
         pdf.setFont('helvetica', 'normal');
         pdf.setFontSize(9);
-        pdf.text(`Inscrição: ${candidate.inscricao} | Nota: ${candidate.nota}`, margin + 6, currentY);
+        pdf.text(`Inscrição: ${candidate.inscricao} | AC: ${candidate.ac}${candidate.pcd ? ` | PCD: ${candidate.pcd}` : ''}`, margin + 6, currentY);
         currentY += 8;
 
         // Organizar em duas colunas com margens internas
@@ -337,20 +317,7 @@ export class ExportService {
         let col1Y = currentY;
         let col2Y = currentY;
 
-        // Coluna 1: Data de nascimento e Formação
-        // Seção Data de Nascimento
-        pdf.setTextColor(59, 130, 246); // Azul para títulos
-        pdf.setFont('helvetica', 'bold');
-        pdf.setFontSize(8);
-        pdf.text('* DATA DE NASCIMENTO', col1X, col1Y);
-        col1Y += 4;
-        pdf.setTextColor(0, 0, 0);
-        pdf.setFont('helvetica', 'normal');
-        pdf.setFontSize(8);
-        pdf.text(`${candidate.nascimento} (${age} anos)`, col1X + 2, col1Y);
-        col1Y += 8;
-
-        // Seção Formação
+        // Seção Formação (coluna 1)
         pdf.setTextColor(59, 130, 246);
         pdf.setFont('helvetica', 'bold');
         pdf.setFontSize(8);
