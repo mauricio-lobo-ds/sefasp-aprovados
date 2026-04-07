@@ -211,28 +211,30 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-200">
-              <div className="text-sm text-slate-600">
-                {isImmediatePage ? 'Vagas Imediatas' : 'Cadastro de Reserva (CR)'}
-                {' '}— posições {((currentPage - 1) * itemsPerPage) + 1}º a {Math.min(currentPage * itemsPerPage, cappedPositions.length)}º
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-4 pt-4 border-t border-slate-200">
+              <div className="text-sm text-slate-600 text-center sm:text-left">
+                <span className="font-medium">{isImmediatePage ? 'Vagas Imediatas' : 'Cadastro de Reserva (CR)'}</span>
+                <span className="text-slate-400">
+                  {' '}— {((currentPage - 1) * itemsPerPage) + 1}º a {Math.min(currentPage * itemsPerPage, cappedPositions.length)}º
+                </span>
               </div>
-              <div className="flex space-x-2">
+              <div className="flex items-center justify-center gap-2">
                 <Button
                   variant="ghost"
                   disabled={currentPage === 1}
                   onClick={() => setCurrentPage(prev => prev - 1)}
                 >
-                  Anterior
+                  ← Anterior
                 </Button>
-                <span className="flex items-center px-4 py-2 text-sm text-slate-600">
-                  Página {currentPage} de {totalPages}
+                <span className="px-3 py-1.5 text-sm text-slate-600 bg-slate-100 rounded-md whitespace-nowrap">
+                  {currentPage} / {totalPages}
                 </span>
                 <Button
                   variant="ghost"
                   disabled={currentPage === totalPages}
                   onClick={() => setCurrentPage(prev => prev + 1)}
                 >
-                  Próxima
+                  Próxima →
                 </Button>
               </div>
             </div>
@@ -244,14 +246,22 @@ export const CallOrderList: React.FC<CallOrderListProps> = ({ specialty }) => {
       <Card>
         <CardContent>
           <h4 className="font-medium text-slate-900 mb-3">Legenda:</h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
             <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-blue-100 border border-blue-300 rounded"></div>
-              <span className="text-slate-600">AC - Ampla Concorrência</span>
+              <div className="w-4 h-4 bg-blue-100 border border-blue-300 rounded flex-shrink-0"></div>
+              <span className="text-slate-600">AC — Ampla Concorrência</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-yellow-100 border border-yellow-300 rounded"></div>
-              <span className="text-slate-600">PCD - Pessoa com Deficiência (5ª, 30ª, 50ª, 70ª, 90ª...)</span>
+              <div className="w-4 h-4 bg-yellow-100 border border-yellow-300 rounded flex-shrink-0"></div>
+              <span className="text-slate-600">PCD — Pessoa com Deficiência (5ª, 30ª, 50ª, 70ª...)</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-4 h-4 bg-green-100 border border-green-300 rounded flex-shrink-0"></div>
+              <span className="text-slate-600">Vaga Imediata — prevista no edital</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-4 h-4 bg-white border border-slate-300 rounded flex-shrink-0"></div>
+              <span className="text-slate-600">Cadastro de Reserva (CR) — convocação futura</span>
             </div>
           </div>
         </CardContent>
