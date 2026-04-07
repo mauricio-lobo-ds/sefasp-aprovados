@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Oculta colunas/elementos com classe export-hide-pdf durante captura de PDF */
+.export-hide-pdf {
+	display: table-cell;
+}
+
+@media print {
+	.export-hide-pdf {
+		display: none !important;
+	}
+}

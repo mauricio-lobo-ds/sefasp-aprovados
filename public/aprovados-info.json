@@ -1,0 +1,1895 @@
+{
+  "profissionais": [
+    {
+      "nome": "Herbert Meneses Carvalho",
+      "formacao": [
+        {
+          "curso": "Engenharia Civil",
+          "tipo": "graduacao",
+          "instituicao": "UFPI"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "TJ-SP",
+          "cargo": "Escrevente Técnico Judiciário",
+          "tempo_exercicio": "3 anos"
+        },
+        {
+          "empresa": "ISS Santos",
+          "cargo": "Auditor Fiscal de Tributos Municipais",
+          "tempo_exercicio": "1 ano e 3 meses",
+          "atividades": [
+            "Análise e lançamento de DIFAL de optantes do Simples Nacional",
+            "Fiscalização de ISS na Construção Civil"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "SEFAZ-AC",
+          "cargo": "AFTE",
+          "classificacao": "28",
+          "categoria": "AC"
+        },
+        {
+          "concurso": "ISS Santos",
+          "cargo": "AFTM",
+          "classificacao": "2",
+          "categoria": "N"
+        },
+        {
+          "concurso": "ISS São Bernardo do Campo",
+          "cargo": "AFTM",
+          "classificacao": "3",
+          "categoria": "N"
+        }
+      ]
+    },
+    {
+      "nome": "Rachid Elias Arab",
+      "formacao": [
+        {
+          "curso": "Engenharia Elétrica",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "MBA em Gestão de Pessoas",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "SEF MG",
+          "cargo": "Auditor Fiscal",
+          "tempo_exercicio": "1 ano e 8 meses",
+          "atividades": [
+            "análise de pedidos de devolução",
+            "fiscalização de empresas do setor energético e de telecomunicações"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "SEFAZ-AM",
+          "cargo": "AFTE",
+          "classificacao": "79"
+        },
+        {
+          "concurso": "SEF-MG",
+          "classificacao": "86"
+        }
+      ]
+    },
+    {
+      "nome": "Paulo Sandro Gomes De Lacerda Filho",
+      "formacao": [
+        {
+          "curso": "Engenharia Civil",
+          "tipo": "graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Departamento de Polícia Rodoviária Federal",
+          "cargo": "Policial"
+        }
+      ],
+      "expertise": [
+        "Conhecimento avançado em Excel a partir da utilização de linguagem VBA e VB.NET",
+        "Conhecimento básico de Python",
+        "Conhecimento intermediário em projetos de automação a partir do software Home Assistant",
+        "Conhecimento intermediário no uso de ferramentas de IA, como ChatGPT e Google Gemini"
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "PRF",
+          "classificacao": "412"
+        }
+      ]
+    },
+    {
+      "nome": "Benedito Daniel Nunes Da Silva",
+      "formacao": [
+        {
+          "curso": "Engenharia Civil",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Pós em direito público e privado",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Assembleia Legislativa do CE",
+          "cargo": "Técnico Legislativo",
+          "tempo_exercicio": "3 anos",
+          "atividades": [
+            "Elaboração de Termos de Referência para licitações"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Gestão Tributária",
+          "classificacao": "1"
+        }
+      ]
+    },
+    {
+      "nome": "Italo Siqueira Rodrigues",
+      "formacao": [
+        {
+          "curso": "Engenharia Mecatrônica",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Pós em Direito Tributário",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "area": "Tecnologia da Informação",
+          "especialidade": "desenvolvimento de integrações fiscais",
+          "sistemas": [
+            "Nfcom",
+            "Nfe",
+            "Efd"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "ISS Itumbiara",
+          "classificacao": "1"
+        },
+        {
+          "concurso": "ISS Uberaba",
+          "classificacao": "2"
+        }
+      ]
+    },
+    {
+      "nome": "Lidiane Esteves Pires",
+      "formacao": [
+        {
+          "curso": "Ciências Contábeis",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "MBA em Auditoria e Gestão de Tributos",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Grupo Copar",
+          "cargo": "DCCO Analista - Coordenador Fiscal",
+          "tempo_exercicio": "10 anos",
+          "atividades": [
+            "Escrituração fiscal",
+            "apuração de tributos municipais, estaduais e federais",
+            "entrega de obrigações acessórias",
+            "coordenação de atividades com time fiscal"
+          ]
+        },
+        {
+          "empresa": "Tribunal de Justiça - GO",
+          "cargo": "Analista Judiciário",
+          "tempo_exercicio": "5 meses",
+          "atividades": [
+            "Cálculos judiciários"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "TJGO",
+          "classificacao": "1",
+          "categoria": "PCD"
+        }
+      ]
+    },
+    {
+      "nome": "Breno Henrique Fernandes Lopes Dos Santos",
+      "formacao": [
+        {
+          "curso": "Engenharia Civil",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Gestão Pública",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "SEFAZ/SC",
+          "cargo": "Analista da Receita Estadual IV",
+          "tempo_exercicio": "3 anos",
+          "setor": "Diretoria de Gestão de Fundos",
+          "atividades": [
+            "gestão e operacionalização contábil e financeira do FUNDO SOCIAL",
+            "gerenciamento de fundo público estadual com dotação orçamentária superior a 900 milhões de reais na LOA 2025"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor Fiscal Pref. Cuiabá Tecnologia da Informação",
+          "classificacao": "1",
+          "categoria": "PPP",
+          "observacao": "01 PPP/05 ampla"
+        },
+        {
+          "concurso": "Consultor Legislativo da Câmara dos Deputados (Área IV - Finanças Públicas)",
+          "classificacao": "8",
+          "categoria": "ampla"
+        },
+        {
+          "concurso": "Contadoria e Auditoria-Geral do Estado do Rio Grande do Sul CAGE RS",
+          "classificacao": "10",
+          "categoria": "PPP"
+        },
+        {
+          "concurso": "Analista da Receita Estadual SEFAZ/SC",
+          "classificacao": "104",
+          "categoria": "ampla",
+          "situacao": "nomeado em 2022, cargo atual"
+        }
+      ]
+    },
+    {
+      "nome": "Bruno Da Silva Pires Lima",
+      "formacao": [
+        {
+          "curso": "Não informado",
+          "tipo": "graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Corpo de Bombeiros Militar",
+          "cargo": "Oficial Bombeiro Militar"
+        },
+        {
+          "empresa": "CGU",
+          "cargo": "Auditor Federal de Finanças e Controle"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor da Controladoria-Geral da União",
+          "classificacao": "120"
+        },
+        {
+          "concurso": "Auditor da Prefeitura do Rio de Janeiro",
+          "classificacao": "52"
+        },
+        {
+          "concurso": "Auditor da Sefaz Do Estado do Rio de Janeiro",
+          "classificacao": "56"
+        }
+      ]
+    },
+    {
+      "nome": "Thadeu Argolo De Andrade",
+      "formacao": [
+        {
+          "curso": "Ciências Contábeis",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Análise e Desenvolvimento de Sistemas",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Especialização em Ciências de Dados e Big Data",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "SEF MG",
+          "cargo": "Auditor Fiscal",
+          "tempo_exercicio": "1,5 ano",
+          "setor": "Diretoria de Inteligência Analítica"
+        },
+        {
+          "empresa": "Receita Federal",
+          "cargo": "Analista Tributário",
+          "tempo_exercicio": "10 anos",
+          "areas": [
+            "Aduana",
+            "sistemas"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor Fiscal SEF - MG",
+          "classificacao": "16"
+        },
+        {
+          "concurso": "Auditor do Estado CGE SC",
+          "classificacao": "8"
+        }
+      ]
+    },
+    {
+      "nome": "Daniel Silveira Da Rocha",
+      "formacao": [
+        {
+          "curso": "MBA Relações Internacionais",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Marinha do Brasil",
+          "cargo": "Oficial da Marinha",
+          "tempo_exercicio": "16 anos",
+          "ultimo_posto": "Capitão-Tenente",
+          "expertise": [
+            "gestão de pessoas"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Cuiabá Gestão Tributária",
+          "classificacao": "21",
+          "observacao": "primeira aprovação"
+        }
+      ]
+    },
+    {
+      "nome": "Jonadas Pires De Souza",
+      "formacao": [
+        {
+          "curso": "Filosofia",
+          "tipo": "graduacao",
+          "ano_conclusao": "2002"
+        },
+        {
+          "curso": "Farmácia",
+          "tipo": "graduacao",
+          "ano_conclusao": "2008"
+        },
+        {
+          "curso": "Análise Clínica Farmacológica",
+          "tipo": "pos_graduacao",
+          "ano_conclusao": "2010"
+        },
+        {
+          "curso": "Gestão Pública",
+          "tipo": "pos_graduacao",
+          "ano_conclusao": "2024"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao",
+          "ano_conclusao": "2024"
+        },
+        {
+          "curso": "Auditoria",
+          "tipo": "pos_graduacao",
+          "ano_conclusao": "2024"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Drogaria Souza Ltda (São Luis de Montes Belos - GO)",
+          "cargo": "Responsável Técnico - Farmacêutico",
+          "periodo": "2009 a 2013"
+        },
+        {
+          "empresa": "Drogaria Souza Regional (São Luis de Montes Belos - GO)",
+          "cargo": "Responsável Técnico e Gerente",
+          "periodo": "2009 a 2013",
+          "atividades": [
+            "gerenciamento",
+            "atividades farmacêuticas"
+          ]
+        },
+        {
+          "empresa": "Drogaria Rio da Prata Ltda (São Luis de Montes Belos - GO)",
+          "cargo": "Sócio Administrador",
+          "periodo": "2013 a 2017",
+          "atividades": [
+            "administração da empresa",
+            "atividades farmacêuticas"
+          ]
+        },
+        {
+          "empresa": "Droga Farma Popular (Querência - MT)",
+          "cargo": "Sócio Administrador",
+          "periodo": "2017 a 2024",
+          "atividades": [
+            "administração da empresa",
+            "atividades farmacêuticas"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "ISS/CUIABA",
+          "classificacao": "7"
+        },
+        {
+          "concurso": "ISS/RJ",
+          "classificacao": "301"
+        },
+        {
+          "concurso": "SEFAZ/PARANA",
+          "classificacao": "14"
+        },
+        {
+          "concurso": "SEFAZ/ACRE",
+          "classificacao": "36"
+        },
+        {
+          "concurso": "SEFAZ/MG",
+          "classificacao": "769"
+        }
+      ]
+    },
+    {
+      "nome": "Leonardo Cardoso De Araujo",
+      "formacao": [
+        {
+          "curso": "Engenharia Física",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "MBA Gestão de Projetos",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Pós Administração de empresas",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Pós Engenharia Elétrica",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Intercâmbio em Engenharia de Produção (Alemanha)",
+          "tipo": "intercambio"
+        },
+        {
+          "curso": "Intercâmbio em Ciências da Engenharia (França)",
+          "tipo": "intercambio"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Vale do Sol Energias",
+          "cargo": "Sócio-administrador",
+          "tempo_exercicio": "7 anos",
+          "atividades": [
+            "Administração empresarial"
+          ]
+        },
+        {
+          "empresa": "Unesp",
+          "cargo": "Iniciação Científica",
+          "tempo_exercicio": "2 anos",
+          "atividades": [
+            "Modelo computacional de fenômenos econômicos"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor-Fiscal do Trabalho",
+          "classificacao": "314"
+        }
+      ]
+    },
+    {
+      "nome": "Antônio Luís Sombra De Medeiros",
+      "formacao": [
+        {
+          "curso": "Engenharia de Computação",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Mestrado em Modelagem Matemática",
+          "tipo": "mestrado"
+        },
+        {
+          "curso": "Doutorado em Visão Computacional e Sensoriamento Remoto",
+          "tipo": "doutorado",
+          "status": "incompleto"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "PUC/Rio - Laboratório de Visão Computacional",
+          "cargo": "Pesquisador de Doutorado",
+          "periodo": "2019-2022",
+          "tempo_exercicio": "3 anos",
+          "area": "Georreferenciamento/Sensoriamento Remoto",
+          "projetos": [
+            "Detecção de desmatamento na Amazônia por imagens de satélite",
+            "Detecção de manchas de derramamento de óleo no oceano por imagens de satélite SAR"
+          ]
+        },
+        {
+          "empresa": "Tribunal de Justiça do DF e Territórios (TJDFT)",
+          "cargo": "Analista Judiciário - Análise de Dados",
+          "periodo": "2022-2024",
+          "tempo_exercicio": "2 anos",
+          "funcao": "Desenvolvedor de IA",
+          "projetos": [
+            "desenvolvimento de sistema de reconhecimento facial (SAREF) para apenados em regime de prisão domiciliar",
+            "sistema atende milhares de apenados de todo o DF",
+            "redução de mais de 80% do esforço administrativo e filas com apresentações presenciais na VEPERA"
+          ]
+        },
+        {
+          "empresa": "Secretaria do Tesouro Nacional",
+          "cargo": "Auditor Federal de Finanças e Controle - TI - Transformação digital",
+          "periodo": "2024-2025",
+          "tempo_exercicio": "1 ano",
+          "areas": [
+            "Governança de Dados e IA",
+            "projetos de melhoria e automatização de processos",
+            "automação da geração de relatórios",
+            "criação de Assistentes de IA (LLMs) generalistas e especializados (RAG)"
+          ],
+          "tecnologias": [
+            "Microsoft 365 Copilot",
+            "Fabric",
+            "Power Automate",
+            "Power BI"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "TJDFT",
+          "cargo": "Analista Judiciário - Especialidade Análise de Dados",
+          "classificacao": "3",
+          "situacao": "Nomeado nas Vagas + Empossado",
+          "ano": "2022"
+        },
+        {
+          "concurso": "TRF-1",
+          "cargo": "Analista Judiciário - Especialidade Análise de Dados",
+          "classificacao": "4",
+          "ano": "2024"
+        },
+        {
+          "concurso": "STN",
+          "cargo": "Auditor Federal de Finanças e Controle - Transformação digital",
+          "classificacao": "5",
+          "situacao": "Nomeado nas Vagas e Empossado",
+          "ano": "2024"
+        },
+        {
+          "concurso": "ISS Cuiabá",
+          "cargo": "Auditor Fiscal de TI",
+          "classificacao": "2",
+          "categoria": "PPP",
+          "situacao": "CR",
+          "ano": "2024"
+        },
+        {
+          "concurso": "BNDES",
+          "cargo": "Cientista de Dados",
+          "classificacao": "13",
+          "situacao": "CR nomeado",
+          "ano": "2024"
+        },
+        {
+          "concurso": "SEFAZ MG",
+          "cargo": "Auditor fiscal de TI",
+          "classificacao": "104",
+          "situacao": "CR - próximo da lista de chamada"
+        }
+      ]
+    },
+    {
+      "nome": "Augusto Luiz Oliveira Rosa Araujo",
+      "formacao": [
+        {
+          "curso": "Engenharia Civil",
+          "tipo": "graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Secretaria Municipal de Finanças de Rio Largo-AL"
+        },
+        {
+          "empresa": "Secretaria Municipal de Obras Rio Largo-AL"
+        },
+        {
+          "empresa": "Construtora SOMART"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "ISS CUIABÁ",
+          "classificacao": "15"
+        },
+        {
+          "concurso": "SEFAZ AMAZONAS",
+          "classificacao": "166"
+        }
+      ]
+    },
+    {
+      "nome": "Ivelton Da Silva Cassemiro",
+      "formacao": [
+        {
+          "curso": "Bacharel em Direito",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Tecnólogo em Gestão Pública",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito Público",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Prefeitura de Valparaíso",
+          "cargo": "Chefe do Setor Tributário",
+          "tempo_exercicio": "1 ano",
+          "atividades": [
+            "Lançamento e Fiscalização de Tributos"
+          ]
+        },
+        {
+          "empresa": "Prefeitura de Pontes Gestal",
+          "cargo": "Assessor Jurídico",
+          "tempo_exercicio": "7 anos",
+          "atividades": [
+            "Assessoria Jurídica ao Município"
+          ]
+        },
+        {
+          "empresa": "Prefeitura de Votuporanga",
+          "cargo": "Controlador Interno",
+          "tempo_exercicio": "9 anos",
+          "situacao": "cargo atual",
+          "atividades": [
+            "Fiscalização Contábil",
+            "Fiscalização Financeira",
+            "Fiscalização Patrimonial",
+            "Fiscalização Operacional",
+            "Auditoria Interna"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "ISS - Piracicaba",
+          "classificacao": "1"
+        },
+        {
+          "concurso": "ISS - Santa Barbara do Oeste",
+          "classificacao": "7"
+        },
+        {
+          "concurso": "ISS - Catanduva",
+          "classificacao": "8"
+        },
+        {
+          "concurso": "Tribunal de Contas do Estado de São Paulo",
+          "cargo": "Auditor de Controle Externo",
+          "situacao": "aguardando a colocação oficial"
+        }
+      ]
+    },
+    {
+      "nome": "Abenilton Hipolito De Araujo Junior",
+      "formacao": [
+        {
+          "curso": "Direito",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Direito Civil",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "TCE/ES",
+          "cargo": "Auditor de Controle Externo",
+          "tempo_exercicio": "1 ano",
+          "areas": [
+            "auditoria administrativa",
+            "auditoria previdenciária"
+          ]
+        },
+        {
+          "empresa": "TRT-15",
+          "cargo": "Oficial de Justiça",
+          "tempo_exercicio": "2 anos",
+          "atividades": [
+            "pesquisa patrimonial",
+            "avaliação"
+          ]
+        },
+        {
+          "empresa": "MPF-ES",
+          "cargo": "Técnico administrativo",
+          "tempo_exercicio": "15 anos",
+          "atividades": [
+            "Assessoria Jurídica"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "TCE/ES",
+          "classificacao": "4"
+        },
+        {
+          "concurso": "TRT15",
+          "classificacao": "3"
+        },
+        {
+          "concurso": "ISS-Cuiabá",
+          "classificacao": "3"
+        }
+      ]
+    },
+    {
+      "nome": "Jorge Edson Soledade De Santa Rosa",
+      "formacao": [
+        {
+          "curso": "Análise e Desenvolvimento de Sistemas",
+          "tipo": "graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Petrobras",
+          "cargo": "Técnico em Eletrotécnica",
+          "tempo_exercicio": "10 anos"
+        },
+        {
+          "empresa": "Polícia Federal",
+          "cargo": "Agente de Polícia Federal",
+          "tempo_exercicio": "3,5 anos"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Petrobras",
+          "classificacao": "5",
+          "ano": "2011.2",
+          "regional": "Bahia"
+        },
+        {
+          "concurso": "PF",
+          "cargo": "Agente",
+          "classificacao": "643",
+          "ano": "2021"
+        },
+        {
+          "concurso": "PCDF",
+          "cargo": "Agente",
+          "classificacao": "111",
+          "ano": "2021"
+        },
+        {
+          "concurso": "SEFAZ MG",
+          "cargo": "Auditor e Fiscalização",
+          "classificacao": "875",
+          "ano": "2023"
+        }
+      ]
+    },
+    {
+      "nome": "Paulo Henrique De Freitas",
+      "formacao": [
+        {
+          "curso": "Direito",
+          "tipo": "graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "TCE-PR",
+          "cargo": "Auditor de Controle Externo-Área Jurídica",
+          "tempo_exercicio": "3 meses",
+          "situacao": "cargo atual"
+        },
+        {
+          "empresa": "INSS",
+          "cargo": "Técnico do Seguro Social",
+          "tempo_exercicio": "8 anos"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "ISS-Rio",
+          "classificacao": "29",
+          "categoria": "cotas"
+        },
+        {
+          "concurso": "TCE-PR",
+          "classificacao": "1",
+          "categoria": "cotas"
+        },
+        {
+          "concurso": "INSS",
+          "classificacao": "11",
+          "categoria": "ampla",
+          "observacao": "na regional"
+        }
+      ]
+    },
+    {
+      "nome": "Mauricio Miranda Lobo Leite",
+      "formacao": [
+        {
+          "curso": "Engenharia Civil",
+          "tipo": "graduacao",
+          "instituicao": "UFMG"
+        },
+        {
+          "curso": "MBA Data Science & Analytics",
+          "tipo": "pos_graduacao",
+          "instituicao": "USP"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "FAB (Força Aérea Brasileira)",
+          "cargo": "Capitão Engenheiro",
+          "funcao": "Chefe da Seção de Análise de Dados da Diretoria de Infraestrutura",
+          "expertise": [
+            "Business Intelligence",
+            "Machine Learning",
+            "análise preditiva",
+            "fiscalização de contratos públicos",
+            "desenvolvimento de dashboards gerenciais (PowerBI)",
+            "automação de processos (Python)",
+            "implementação de sistemas de gestão",
+            "coordenação de projetos de modernização tecnológica"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "EAOEAR",
+          "cargo": "Engenheiro Civil de Carreira - FAB",
+          "classificacao": "2",
+          "ano": "2015"
+        },
+        {
+          "concurso": "MPO",
+          "cargo": "Analista de Planejamento e Orçamento - Gestão de Dados",
+          "classificacao": "15",
+          "ano": "2024"
+        },
+        {
+          "concurso": "TCE-SP",
+          "cargo": "Auditor de Controle Externo",
+          "classificacao": "69",
+          "ano": "2025"
+        },
+        {
+          "concurso": "SEFAZ-MG",
+          "classificacao": "628"
+        }
+      ]
+    },
+    {
+      "nome": "Pedro Augusto Rossi De Camargo",
+      "formacao": [
+        {
+          "curso": "Química",
+          "tipo": "graduacao",
+          "instituicao": "USP"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Município do Rio de Janeiro",
+          "cargo": "Auditor fiscal",
+          "data_inicio": "05/2024",
+          "situacao": "cargo atual"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Agente de Polícia Federal",
+          "classificacao": "48"
+        },
+        {
+          "concurso": "ISS RJ",
+          "classificacao": "6"
+        },
+        {
+          "concurso": "ISS Cuiabá",
+          "classificacao": "5"
+        },
+        {
+          "concurso": "SEFAZ RJ",
+          "classificacao": "48"
+        }
+      ]
+    },
+    {
+      "nome": "Amadeu Soares Corrêa",
+      "formacao": [
+        {
+          "curso": "Pedagogia",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito Público",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Tribunal de Justiça do Amazonas",
+          "cargo": "Técnico Judiciário",
+          "tempo_exercicio": "13 anos",
+          "atividades": [
+            "movimentação e análise de processos judiciais",
+            "confecção de minutas (despachos, decisões e sentenças) para magistrados"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "ISS Cuiabá",
+          "especialidade": "Direito/Processo Tributário",
+          "classificacao": "1"        }
+      ]
+    },
+    {
+      "nome": "Diogo Mariani Gonçalves",
+      "formacao": [
+        {
+          "curso": "Direito",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Administração",
+          "tipo": "graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Prefeitura Municipal de Curitiba",
+          "cargo": "Auditor Fiscal",
+          "tempo_exercicio": "4 anos e 6 meses",
+          "atividades": [
+            "fiscalização do Simples Nacional",
+            "responsável pela malha fiscal no Município"
+          ]
+        }
+      ],
+      "aprovacoes": []
+    },
+    {
+      "nome": "Arthur Henrique Rézio Santos",
+      "formacao": [
+        {
+          "curso": "Engenharia Civil",
+          "tipo": "graduacao",
+          "instituicao": "Universidade Federal de Goiás - UFG"
+        },
+        {
+          "curso": "Auditoria Fiscal",
+          "tipo": "pos_graduacao",
+          "modalidade": "Lato Sensu",
+          "status": "cursando",
+          "previsao_termino": "2025"
+        },
+        {
+          "curso": "Planejamento Tributário",
+          "tipo": "pos_graduacao",
+          "modalidade": "Lato Sensu",
+          "status": "cursando",
+          "previsao_termino": "2025"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Conceito Engenharia",
+          "cargo": "Engenheiro Civil",
+          "tempo_exercicio": "mais de 9,5 anos",
+          "situacao": "última experiência profissional",
+          "atividades": [
+            "planejamento de obras",
+            "orçamento de obras",
+            "execução de obras"
+          ],
+          "expertise": [
+            "análise de custos de empreendimentos imobiliários e de construção de diversos tipos",
+            "análise de custos de mão de obra da construção civil"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor Fiscal - Gestão Tributária - Cuiabá/MT",
+          "classificacao": "4"        },
+        {
+          "concurso": "Auditor Fiscal - (lista universal) Porto Alegre/RS",
+          "classificacao": "16"        },
+        {
+          "concurso": "Auditor Fiscal - Jaboatão dos Guararapes/PE",
+          "classificacao": "12"        },
+        {
+          "concurso": "Auditor Fiscal - Estado de Minas Gerais",
+          "classificacao": "747"        }
+      ]
+    },
+    {
+      "nome": "Julio Moreira Sampaio",
+      "formacao": [
+        {
+          "curso": "Engenharia de Materiais",
+          "tipo": "graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Sefaz SC",
+          "cargo": "Analista",
+          "tempo_exercicio": "1,5 anos",
+          "atividades": [
+            "desenvolvimento de malhas fiscais"
+          ]
+        },
+        {
+          "empresa": "Sefaz MG",
+          "cargo": "Auditor Fiscal",
+          "tempo_exercicio": "4 meses",
+          "atividades": [
+            "exploração de dados fiscais",
+            "desenvolvimento de malhas fiscais"
+          ]
+        },
+        {
+          "empresa": "Sefaz AM",
+          "cargo": "Auditor fiscal",
+          "tempo_exercicio": "1 ano e 3 meses",
+          "atividades": [
+            "revisão de autos de infração"
+          ]
+        }
+      ],
+      "aprovacoes": []
+    },
+    {
+      "nome": "João Henrique Souza Dos Reis",
+      "formacao": [
+        {
+          "curso": "Direito",
+          "tipo": "graduacao",
+          "instituicao": "UFMS"
+        },
+        {
+          "curso": "Mestrado em Direito",
+          "tipo": "mestrado",
+          "instituicao": "UFMS"
+        },
+        {
+          "curso": "Direito e Processo Tributário",
+          "tipo": "pos_graduacao",
+          "modalidade": "lato sensu"
+        },
+        {
+          "curso": "Direito Público",
+          "tipo": "pos_graduacao",
+          "modalidade": "lato sensu"
+        },
+        {
+          "curso": "Advocacia na Fazenda Pública",
+          "tipo": "pos_graduacao",
+          "modalidade": "lato sensu"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "TJ-MS",
+          "cargo": "Analista judiciário (área-fim)",
+          "tempo_exercicio": "4 anos",
+          "lotacao": "vice-presidência",
+          "situacao": "cargo atual"
+        },
+        {
+          "empresa": "Escritório próprio",
+          "cargo": "Advogado (sócio-administrador)",
+          "tempo_exercicio": "2 anos"
+        }
+      ],
+      "expertise": [
+        "produção de diversos artigos científicos",
+        "capítulos de livros",
+        "organização de eventos jurídicos",
+        "participação na Constituição Comentada do Estado do MS",
+        "curso de extensão MEGE de 100 horas para advocacia pública",
+        "facilidade com escrita, análise, elaboração de pareceres",
+        "idiomas: inglês e espanhol",
+        "sistemas e programas jurídicos: Excel, Word, Windows, sistemas de tribunais e pesquisas"
+      ],
+      "formacao_complementar": [
+        "estágio na Procuradoria da Fazenda Nacional"
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor Fiscal (Cuiabá)",
+          "situacao": "aprovado"
+        },
+        {
+          "concurso": "Analista judiciário (área-fim) TJ-MS",
+          "situacao": "em exercício"
+        },
+        {
+          "concurso": "Analista jurídico MP-MS",
+          "classificacao": "116"        },
+        {
+          "concurso": "Analista jurídico TJ-SC",
+          "classificacao": "57"        },
+        {
+          "concurso": "Analista jurídico TRE-MS",
+          "classificacao": "9"        }
+      ]
+    },
+    {
+      "nome": "Rodrigo Rianelly De Macedo Evangelista",
+      "formacao": [
+        {
+          "curso": "Engenharia Elétrica",
+          "tipo": "graduacao",
+          "instituicao": "UnB"
+        },
+        {
+          "curso": "Controladoria e Finanças Públicas",
+          "tipo": "pos_graduacao",
+          "instituicao": "Unyleya"
+        },
+        {
+          "curso": "Gestão Financeira Empresarial Estratégica",
+          "tipo": "pos_graduacao",
+          "instituicao": "Uniderp"
+        },
+        {
+          "curso": "Gestão, Contabilidade e Finanças Aplicadas ao Ambiente Bancário",
+          "tipo": "pos_graduacao",
+          "instituicao": "Ibmec"
+        },
+        {
+          "curso": "Banco de Dados",
+          "tipo": "pos_graduacao",
+          "instituicao": "Unicamp",
+          "status": "concluindo",
+          "previsao_termino": "dezembro/2025"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "BRB",
+          "area": "demandas relacionadas a dados em ambiente bancário",
+          "tempo_exercicio": "2 anos"
+        },
+        {
+          "empresa": "CGU",
+          "area": "grandes bancos de dados públicos",
+          "tempo_exercicio": "3 anos"
+        }
+      ],
+      "expertise": [
+        "Excel avançado",
+        "VBA",
+        "Python",
+        "Power BI",
+        "Storytelling com dados",
+        "MySQL",
+        "Oracle DB",
+        "SQL Server",
+        "PostgreSQL",
+        "NoSQL",
+        "Estatística",
+        "Inteligência artificial",
+        "Big Data",
+        "Inglês avançado (diploma Michigan)",
+        "Gerenciamento de riscos",
+        "Planejamento de metas"
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Banco de Brasília (BRB)",
+          "classificacao": "59"        },
+        {
+          "concurso": "Controladoria Geral da União (CGU)",
+          "especialidade": "TI",
+          "classificacao": "6"        }
+      ]
+    },
+    {
+      "nome": "Igor Silva Do Livramento",
+      "formacao": [
+        {
+          "curso": "Direito",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "IBAMA",
+          "cargo": "Analista Ambiental",
+          "tempo_exercicio": "1,5 anos",
+          "atividades": [
+            "desenvolvimento de sistemas"
+          ]
+        },
+        {
+          "empresa": "Controladoria-Geral da União",
+          "cargo": "Auditor Federal de Controle interno",
+          "tempo_exercicio": "8 anos",
+          "area": "correição",
+          "setor": "Corregedoria do órgão"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "IBAMA",
+          "classificacao": "35",
+          "categoria": "ampla",
+          "ano": "2005"
+        },
+        {
+          "concurso": "CGU",
+          "classificacao": "84",
+          "categoria": "ampla",
+          "ano": "2006"
+        },
+        {
+          "concurso": "ISS RJ",
+          "classificacao": "5",
+          "categoria": "cotas",
+          "ano": "2023"
+        },
+        {
+          "concurso": "STN",
+          "classificacao": "5",
+          "categoria": "cotas",
+          "ano": "2024"
+        },
+        {
+          "concurso": "Cage RS",
+          "classificacao": "2",
+          "categoria": "cotas",
+          "ano": "2025"
+        },
+        {
+          "concurso": "ISS Cuiabá",
+          "classificacao": "2",
+          "categoria": "ampla",
+          "ano": "2025"
+        }
+      ]
+    },
+    {
+      "nome": "Jimmy Paiva Gomes",
+      "formacao": [
+        {
+          "curso": "Ciências Navais",
+          "tipo": "graduacao",
+          "instituicao": "Escola Naval"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Sefaz RR",
+          "cargo": "Auditor Fiscal de Tributos Estaduais de Roraima",
+          "tempo_exercicio": "3 anos e meio",
+          "areas": [
+            "análise e ciência de dados",
+            "construção de malhas fiscais",
+            "regularização de documentos fiscais"
+          ],
+          "sistemas": [
+            "DIMP",
+            "CTe",
+            "NF3e",
+            "BPe",
+            "NFe"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Sefaz RR",
+          "classificacao": "8"        },
+        {
+          "concurso": "ISS Cuiabá",
+          "classificacao": "1"        },
+        {
+          "concurso": "CAGE RS",
+          "classificacao": "9"        }
+      ]
+    },
+    {
+      "nome": "Luciano Roberto De Oliveira Carriel",
+      "formacao": [
+        {
+          "curso": "TI",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Gestão de projetos",
+          "tipo": "pos_graduacao",
+          "instituicao": "FGV"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "SEFAZ AP",
+          "cargo": "Auditor",
+          "situacao": "atual",
+          "setor": "Coordenadoria TEC",
+          "projetos": [
+            "Projeto PROFISCO II",
+            "Gerencia de dados"
+          ]
+        },
+        {
+          "empresa": "SAP",
+          "cargo": "Gerente de Projetos",
+          "tempo_exercicio": "10 anos",
+          "certificacoes": [
+            "PMI",
+            "ITIL",
+            "COBIT"
+          ]
+        },
+        {
+          "empresa": "Oracle",
+          "cargo": "DBA",
+          "tempo_exercicio": "5 anos",
+          "atividades": [
+            "Administração de Banco de Dados"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "SEFAZ AP",
+          "classificacao": "18"        }
+      ]
+    },
+    {
+      "nome": "Rykchard Navarro Lorca",
+      "formacao": [
+        {
+          "curso": "Tecnologia em Comércio Exterior",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "TI",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Governo Federal / MGI",
+          "cargo": "Analista em Tecnologia da Informação ATI",
+          "tempo_exercicio": "menos de 1 ano",
+          "atividades": [
+            "planejamento, supervisão, coordenação e controle dos recursos de tecnologia da informação relativos ao funcionamento da administração pública federal"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Analista em Tecnologia da Informação",
+          "classificacao": "4"        },
+        {
+          "concurso": "Agente Administrativo - Câmara de Rondonópolis",
+          "classificacao": "1"        }
+      ]
+    },
+    {
+      "nome": "Vitor Merli De Azevedo",
+      "formacao": [
+        {
+          "curso": "Engenharia Elétrica",
+          "tipo": "graduacao",
+          "instituicao": "EESC-USP"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao",
+          "instituicao": "Damásio-IBMEC"
+        },
+        {
+          "curso": "MBA em Gestão Tributária",
+          "tipo": "pos_graduacao",
+          "instituicao": "ESALQ-USP"
+        }
+      ],
+      "experiencia_profissional": [],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor Fiscal - Catanduva",
+          "classificacao": "11"        },
+        {
+          "concurso": "Auditor Fiscal - Londrina",
+          "classificacao": "16"        },
+        {
+          "concurso": "Auditor Fiscal - Valinhos",
+          "classificacao": "21"        },
+        {
+          "concurso": "Auditor Fiscal - Cajamar",
+          "classificacao": "14"        }
+      ]
+    },
+    {
+      "nome": "Frederico César Dias Martins",
+      "formacao": [
+        {
+          "curso": "Planejamento e Gestão em TI",
+          "tipo": "graduacao",
+          "instituicao": "CEFET-MG"
+        },
+        {
+          "curso": "Geologia",
+          "tipo": "graduacao",
+          "instituicao": "UFMT"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Vilesoft ERP",
+          "cargo": "Programador"
+        },
+        {
+          "empresa": "PRF",
+          "cargo": "Policial Rodoviário Federal"
+        },
+        {
+          "empresa": "PRF",
+          "cargo": "Secretário da Junta Administrativa de Recursos Interpostos"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "SEFAZ-AC",
+          "classificacao": "100"        },
+        {
+          "concurso": "PRF",
+          "classificacao": "120"        }
+      ]
+    },
+    {
+      "nome": "Ricardo Durso Marcal",
+      "formacao": [
+        {
+          "curso": "Comunicação Social",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Gestão de TI",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Gestão Pública",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "CREFITO-4",
+          "cargo": "Agente Administrativo",
+          "atividades": [
+            "Gestão de requerimentos e registros profissionais",
+            "atendimento ao profissional registrado no Conselho"
+          ]
+        },
+        {
+          "empresa": "Toyota Motors (Canadá)",
+          "cargo": "Supervisor de linha de montagem",
+          "tempo_exercicio": "5 anos",
+          "local": "fábrica de Cambridge, Ontário"
+        },
+        {
+          "empresa": "Itau Personalite",
+          "cargo": "Gerente de alta renda",
+          "tempo_exercicio": "2 anos",
+          "atividades": [
+            "Gestão de crédito e investimentos de aproximadamente 450 clientes"
+          ]
+        },
+        {
+          "empresa": "Polícia Civil de Minas Gerais",
+          "cargo": "Escrivão de Polícia",
+          "tempo_exercicio": "2 anos",
+          "atividades": [
+            "Gestão de inquéritos e materiais apreendidos"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "SEFAZ/RJ",
+          "classificacao": "12"        },
+        {
+          "concurso": "SEFAZ/PR",
+          "classificacao": "20"        },
+        {
+          "concurso": "SEFAZ/AC",
+          "classificacao": "17"        },
+        {
+          "concurso": "ISS/RJ",
+          "classificacao": "144"        },
+        {
+          "concurso": "ISS/Ribeirão Preto",
+          "classificacao": "12"        },
+        {
+          "concurso": "ISS/ São José dos Campos",
+          "classificacao": "5"        },
+        {
+          "concurso": "ISS/ Ribeirão das Neves",
+          "classificacao": "8"        }
+      ]
+    },
+    {
+      "nome": "Galthiery Alves De Sousa Lopes",
+      "formacao": [
+        {
+          "curso": "Ciências Contábeis",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Mestrado em Direito",
+          "tipo": "mestrado"
+        },
+        {
+          "curso": "Controladoria e Planejamento Tributário",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Direito Constitucional",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Direito Tributário em Contabilidade",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Auditoria e Perícia Contábil",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Administração, Contabilidade e Finanças",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Direito do Trabalho e Previdenciário",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "atividade": "Contador, Advogado Tributarista"
+        },
+        {
+          "empresa": "SEFAZ/TO",
+          "cargo": "Conselheiro Julgador em 2ª instância do Contencioso Administrativo Tributário do Tocantins"
+        },
+        {
+          "empresa": "Conselho Regional de Contabilidade do Tocantins",
+          "cargo": "Conselheiro"
+        },
+        {
+          "atividade": "Professor com experiência na Graduação e Pós-graduação"
+        },
+        {
+          "atividade": "Palestrante"
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Advogado da Ebserh",
+          "classificacao": "2",
+          "categoria": "Ampla",
+          "observacao": "1º PCD"
+        },
+        {
+          "concurso": "Auditor municipal Formosa-GO",
+          "classificacao": "3",
+          "categoria": "PCD"
+        },
+        {
+          "concurso": "Auditor Fiscal Acre",
+          "classificacao": "14",
+          "categoria": "PCD"
+        }
+      ]
+    },
+    {
+      "nome": "Danilo Da Silva Toniato",
+      "formacao": [
+        {
+          "curso": "Doutorando em Engenharia",
+          "tipo": "doutorado",
+          "instituicao": "UFSC",
+          "status": "em andamento"
+        },
+        {
+          "curso": "Mestrado em Engenharia Mecânica",
+          "tipo": "mestrado",
+          "instituicao": "UFSC",
+          "tema": "Implementação de IA para classificação de motores"
+        },
+        {
+          "curso": "Engenharia Mecânica",
+          "tipo": "graduacao",
+          "instituicao": "UFES"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "WEG Motores",
+          "cargo": "Gerente de Projetos",
+          "tempo_exercicio": "1,5 ano",
+          "atividades": [
+            "Coordenação de projetos de redução de custo e aumento de qualidade"
+          ]
+        },
+        {
+          "empresa": "WEG Motores",
+          "cargo": "Engenheiro de Produto",
+          "tempo_exercicio": "1,5 ano",
+          "atividades": [
+            "Desenvolvimento de projetos de melhoria de motores do ramo residencial"
+          ]
+        },
+        {
+          "empresa": "WEG Motores",
+          "cargo": "Engenheiro de Qualidade",
+          "tempo_exercicio": "2 anos",
+          "atividades": [
+            "Tratativa de não conformidades com uso da metodologia Six Sigma"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "SEFAZ PR",
+          "classificacao": "3",
+          "categoria": "PcD",
+          "situacao": "AINDA NÃO HOMOLOGADO (RESULTADO PARCIAL)"
+        }
+      ]
+    },
+    {
+      "nome": "Álvaro De Lima Rodrigues",
+      "formacao": [
+        {
+          "curso": "Gestão Pública",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Auditoria e Controladoria no Setor Público",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Direito Tributário",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "area": "serviço público",
+          "tempo_exercicio": "mais de 10 anos",
+          "detalhamento": [
+            "3 anos no Poder Executivo municipal",
+            "7 anos no poder legislativo municipal"
+          ],
+          "atividades": [
+            "elaboração de proposições",
+            "assessoria direta às comissões parlamentares quanto a aspectos técnicos e jurídicos de proposições legislativas"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "Auditor Fiscal ISS Ribeirão Preto",
+          "classificacao": "2"        },
+        {
+          "concurso": "Controlador Interno - Câmara Municipal de Paulínia/SP",
+          "classificacao": "1"        },
+        {
+          "concurso": "Assistente Legislativo das Comissões - Câmara Municipal de Mauá/SP",
+          "classificacao": "1"        },
+        {
+          "concurso": "Técnico Judiciário TJSP",
+          "classificacao": "12"        },
+        {
+          "concurso": "Agente Administrativo - Prefeitura de Mauá/SP",
+          "classificacao": "16"        },
+        {
+          "concurso": "Oficial Legislativo - Câmara Municipal de Poá/SP",
+          "classificacao": "43"        }
+      ]
+    },
+    {
+      "nome": "Filipe Aquino Das Neves",
+      "formacao": [
+        {
+          "curso": "Direito",
+          "tipo": "graduacao",
+          "instituicao": "Instituto Presbiteriano Mackenzie"
+        },
+        {
+          "curso": "Direito Empresarial",
+          "tipo": "pos_graduacao",
+          "instituicao": "FGV"
+        },
+        {
+          "curso": "MBA em Direito Tributário",
+          "tipo": "pos_graduacao",
+          "instituicao": "FGV"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "atividade": "advogado autônomo",
+          "tempo_exercicio": "quase 20 anos",
+          "areas": [
+            "Direito Tributário",
+            "Direito Civil",
+            "Direito Societário",
+            "Direito de Família"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "EPPGG - CNU",
+          "classificacao": "192",
+          "situacao": "CR"
+        },
+        {
+          "concurso": "CGM/SP",
+          "classificacao": "69",
+          "situacao": "CR"
+        }
+      ]
+    },
+    {
+      "nome": "Alan Marcos Ferreira Dias Sales",
+      "formacao": [
+        {
+          "curso": "Engenharia Elétrica",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "MBA Gestão de Projetos",
+          "tipo": "pos_graduacao"
+        },
+        {
+          "curso": "Mestre em Eficiência Energética",
+          "tipo": "mestrado"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "SEFAZ AP",
+          "cargo": "Fiscal da Receita Estadual",
+          "tempo_exercicio": "8 meses",
+          "funcao": "Assessor da Receita",
+          "atividades": [
+            "Gestor de projetos de modernização (Profisco e outros)"
+          ]
+        }
+      ],
+      "aprovacoes": [
+        {
+          "concurso": "SEFAZ RR",
+          "classificacao": "106"        }
+      ]
+    },
+    {
+      "nome": "Marcos Pidorodeski",
+      "formacao": [
+        {
+          "curso": "Administração",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Letras Português",
+          "tipo": "graduacao"
+        },
+        {
+          "curso": "Direito Público",
+          "tipo": "pos_graduacao"
+        }
+      ],
+      "experiencia_profissional": [
+        {
+          "empresa": "Exército Brasileiro",
+          "cargo": "3º Sgt",
+          "areas": [
+            "Licitações e Contratos"
+          ]
+        },
+        {
+          "empresa": "PCPR",
+          "cargo": "Agente de Polícia Judiciária",
+          "areas": [
+            "Crimes cibernéticos",
+            "Lavagem de dinheiro"
+          ]
+        }
+      ],
+      "aprovacoes": []
+    }
+  ]
+}

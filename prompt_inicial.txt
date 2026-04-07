@@ -1,0 +1,47 @@
+App em typescript com react no frontend.
+Backend (pode ser integrado ao codigo por ser um app simples, que será hospedado como static site no render)
+Quero somente que deixe a arquitetura de pastas e arquivos seguindo as melhores práticas de codigo, SOLID e GRASP, MVC.
+
+O app é um ordenador de candidatos aprovados em um concurso para Auditor Fiscal Tributário da cidade de Cuiabá-MT.
+
+#DADOS - LISTA DE APROVADOS: 
+Teremos uma tela com devidos filtros interativos com os dados-aprovados.csv com as colunas a seguir:
+Especialidade (Texto - temos 3 especialidades diferentes, a classificacao é por especialidade)
+Inscrição (Numero)
+Nome (Texto)
+Nascimento (Data)
+Nota (Numero)
+AC (Numero - Colocacao da Ampla Concorrencia)
+PCD (Numero - Colocacao dos candidados que concorrem na cota de Deficientes)
+NI (Numero - Colocacao dos candidados que concorrem na cota de Negros e Indigenas)
+
+Obs: Como o app não tem objetivo de ter um Banco de Dados como serviço, teremos esta lista de dados imutável como fonte  e tudo que o usuário for fazendo, conforme detalho abaixo, fica salvo na sessão no navegador, com possibilidade de exportar as listas geradas por ele.
+
+
+#HOMEPAGE: 
+Iremos ter uma tela inicial somente de homepage (bonita, estilizada e moderna) que redireciona intuitivamente para as outras 3 paginas principais, uma para cada especialidade: DIREITO/PROCESSO TRIBUTÁRIO; GESTÃO TRIBUTÁRIA; TECNOLOGIA DA INFORMAÇÃO. 
+Essas 3 paginas serão exatamente as mesmas, porem com a diferença de que o conteúdo exibido será segregado pela especialidade contida nos dados.
+
+#PAGINA DA ESPECIALIDADE
+Quero que seja estruturada em Abas:
+1-Lista:
+Aprovados filtrados para aquela especialidade (lista 100% dos aprovados daquela especialidade)
+2-Ordem de Chamada:
+Aqui teremos a parte mais importante do app, que é a ordem em que os candidatos aprovados serão chamados.
+Se nao existissem as cotas seria facil porque seria somente seguir a ordem da AC. Porém, como existem as cotas, a legislação elenca um percentual de candidatos de determinada cota que deve estar presente entre uma quantidade de chamados (por exemplo: 20% NI e 10% PCD). 
+É importante ressaltar que o aprovado que está nas cotas pode ser chamado tanto pela AC quanto pela sua posicao e momento de chamar pela cota, o que vier primeiro e lhe seja mais favoraável (ex: um aprovado em primeiro na AC, que tambem está na cota de NI, considerando que sempre o primeiro a ser chamado é da AC, será chamado pela AC e quando for a vez de chamar pela NI, será escolhido o próximo dessa cota... é como se ele tivesse saído da lista de cota quando for chamado pela AC quando coincidir de ser a vez dele.)
+Esta aba exibe uma Lista com somente os 20 primeiros daquela especialidade, na ordem de chamada, com a possibilidade de considerar eventuais desistentes por meio de um botao presente na lista.
+Colunas: Posicao (de chamada, 1 a 20); Tipo (AC, PCD, NI); Inscricao; Nome;Nascimento;BotaoX (para considerar aquele aprovado como alguem que nao vai assumir)
+Caso o botao seja clicado, aquele aprovado irá sumir da lista dos 20, mas é interessante que se tenha uma relação destacada com os candidatos considerados que nao irão assumir. Pode aparecer esta relação em cima da lista dos 20 com texto em cor diferente.
+Vou passar agora a ordem de chamada dos 20 primeiros para GESTÃO TRIBUTÁRIA: 1AC 2AC 3NI 4AC 5AC 6PCD 7AC 8NI 9AC 10AC 11AC 12AC 13NI 14AC 15PCD 16AC 17AC 18NI 19AC 20AC
+Vou passar agora a ordem de chamada dos 20 primeiros para DIREITO/PROCESSO TRIBUTÁRIO e GESTÃO TRIBUTÁRIA; TECNOLOGIA DA INFORMAÇÃO: 1AC 2AC 3NI 4AC 5PCD 6AC 7AC 8NI 9AC 10AC 11AC 12AC 13NI 14AC 15PCD 16AC 17AC 18NI 19AC 20AC
+Perceba que tem uma sutil diferença na posicao 5 e 6 nessas 2 ordens.
+Apesar de ter passado esta lista, gostaria que deixasse editável, caso alguem entenda que a ordem pode ser diferente.
+O algoritmo que processa a ordem deve ser linkado com o que está na tela, caso o usuario tenha alterado.
+Toda vez que algo muda (seja remover um aprovado que nao irá assumir, seja alterar o tipo de vaga na ordem), o algoritmo deve rodar de novo com uma tela de loading para reclassificar novamente.
+Por que reclassificar novamente? Porque pode ser que a sequencia abaixo mude por completo.
+Esta pagina deve ter um botao para voltar a tela inicial (para poder ver outras especialidades)
+
+
+
+
